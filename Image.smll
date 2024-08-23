@@ -70,7 +70,7 @@ fn image_draw_line(image: Image, start_x: Int, start_y: Int, end_x: Int, end_y: 
   image
 }
 
-fn image_draw_triangle(image: Image, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): Image => {
+fn image_draw_triangle(image: Image, x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double): Image => {
   java {
     "image.drawTriangle(x1, y1, x2, y2, x3, y3);"
   }
@@ -115,14 +115,7 @@ fn image_fill_circle(image: Image, x: Double, y: Double, radius: Double): Image 
   image
 }
 
-fn image_fill_line(image: Image, start_x: Int, start_y: Int, end_x: Int, end_y: Int): Image => {
-  java {
-    "image.fillLine(start_x, start_y, end_x, end_y);"
-  }
-  image
-}
-
-fn image_fill_triangle(image: Image, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): Image => {
+fn image_fill_triangle(image: Image, x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double): Image => {
   java {
     "image.fillTriangle(x1, y1, x2, y2, x3, y3);"
   }
