@@ -4,104 +4,97 @@ type CodeDraw = "codedraw.CodeDraw"
 fn codedraw_new(width: Int, height: Int): CodeDraw => {
   val codedraw = null of CodeDraw
   java {
-    "codedraw = codedraw.CodeDraw(width, height);"
+    "codedraw = new codedraw.CodeDraw(width, height);"
   }
   codedraw
 }
 
 (* ============ Drawing Functions ==================== *)
-fn codedraw_draw_rectangle(codedraw: CodeDraw, x: Int, y: Int, width: Int, height: Int): CodeDraw => {
+fn codedraw_draw_rectangle(cdraw: CodeDraw, x: Int, y: Int, width: Int, height: Int): CodeDraw => {
   java {
-    "codedraw.drawRectangle(x, y, width, height); "
+    "cdraw.drawRectangle(x, y, width, height); "
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_draw_square(codedraw: CodeDraw, x: Int, y: Int, side_size: Int): CodeDraw => {
+fn codedraw_draw_square(cdraw: CodeDraw, x: Int, y: Int, side_size: Int): CodeDraw => {
   java {
-    "codedraw.drawSquare(x, y, side_size); "
+    "cdraw.drawSquare(x, y, side_size); "
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_draw_circle(codedraw: CodeDraw, x: Double, y: Double, radius: Double): CodeDraw => {
+fn codedraw_draw_circle(cdraw: CodeDraw, x: Double, y: Double, radius: Double): CodeDraw => {
   java {
-    "codedraw.drawCircle(x, y, radius); "
+    "cdraw.drawCircle(x, y, radius); "
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_draw_line(codedraw: CodeDraw, start_x: Int, start_y: Int, end_x: Int, end_y: Int): CodeDraw => {
+fn codedraw_draw_line(cdraw: CodeDraw, start_x: Int, start_y: Int, end_x: Int, end_y: Int): CodeDraw => {
   java {
-    "codedraw.drawLine(start_x, start_y, end_x, end_y);"
+    "cdraw.drawLine(start_x, start_y, end_x, end_y);"
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_draw_triangle(codedraw: CodeDraw, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): CodeDraw => {
+fn codedraw_draw_triangle(cdraw: CodeDraw, x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double): CodeDraw => {
   java {
-    "codedraw.drawTriangle(x1, y1, x2, y2, x3, y3);"
+    "cdraw.drawTriangle(x1, y1, x2, y2, x3, y3);"
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_draw_text(codedraw: CodeDraw, x: Int, y: Int, text: String): CodeDraw => {
+fn codedraw_draw_text(cdraw: CodeDraw, x: Int, y: Int, text: String): CodeDraw => {
   java {
-    "codedraw.drawText(x, y, text);"
+    "cdraw.drawText(x, y, text);"
   }
-  codedraw
+  cdraw
 }
 
 (* Cast the List[Double] to List[double] using Java *)
-fn codedraw_draw_plogon(codedraw: CodeDraw, vertices: List[Double]): CodeDraw => {
+fn codedraw_draw_plogon(cdraw: CodeDraw, vertices: List[Double]): CodeDraw => {
   java {
-    "// codedraw.drawPolygon(vertices);"
+    "// cdraw.drawPolygon(vertices);"
   }
-  codedraw
+  cdraw
 }
 
 (* ============ Fill Functions ====================== *)
 
-fn codedraw_fill_rectangle(codedraw: CodeDraw, x: Int, y: Int, width: Int, height: Int): CodeDraw => {
+fn codedraw_fill_rectangle(cdraw: CodeDraw, x: Int, y: Int, width: Int, height: Int): CodeDraw => {
   java {
-    "codedraw.fillRectangle(x, y, width, height); "
+    "cdraw.fillRectangle(x, y, width, height); "
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_fill_square(codedraw: CodeDraw, x: Int, y: Int, side_size: Int): CodeDraw => {
+fn codedraw_fill_square(cdraw: CodeDraw, x: Int, y: Int, side_size: Int): CodeDraw => {
   java {
-    "codedraw.fillSquare(x, y, side_size); "
+    "cdraw.fillSquare(x, y, side_size); "
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_fill_circle(codedraw: CodeDraw, x: Double, y: Double, radius: Double): CodeDraw => {
+fn codedraw_fill_circle(cdraw: CodeDraw, x: Double, y: Double, radius: Double): CodeDraw => {
   java {
-    "codedraw.fillCircle(x, y, radius); "
+    "cdraw.fillCircle(x, y, radius); "
   }
-  codedraw
+  cdraw
 }
 
-fn codedraw_fill_line(codedraw: CodeDraw, start_x: Int, start_y: Int, end_x: Int, end_y: Int): CodeDraw => {
+fn codedraw_fill_triangle(cdraw: CodeDraw, x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double): CodeDraw => {
   java {
-    "codedraw.fillLine(start_x, start_y, end_x, end_y);"
+    "cdraw.fillTriangle(x1, y1, x2, y2, x3, y3);"
   }
-  codedraw
-}
-
-fn codedraw_fill_triangle(codedraw: CodeDraw, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): CodeDraw => {
-  java {
-    "codedraw.fillTriangle(x1, y1, x2, y2, x3, y3);"
-  }
-  codedraw
+  cdraw
 }
 
 (* =========== Misc ======================= *)
-fn codedraw_show(codedraw: CodeDraw): CodeDraw => {
+fn codedraw_show(cdraw: CodeDraw): CodeDraw => {
   java {
-    "codedraw.show();"
+    "cdraw.show();"
   }
-  codedraw
+  cdraw
 }
 
