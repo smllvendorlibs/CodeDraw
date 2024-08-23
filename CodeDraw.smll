@@ -1,0 +1,46 @@
+
+type CodeDraw = "codedraw.CodeDraw"
+
+fn codedraw_new(width: Int, height: Int): CodeDraw => {
+  val codedraw = null of CodeDraw
+  java {
+    "codedraw = codedraw.CodeDraw(width, height);"
+  }
+  codedraw
+}
+
+fn codedraw_draw_rectangle(codedraw: CodeDraw, x: Int, y: Int, width: Int, height: Int): CodeDraw => {
+  java {
+    "codedraw.drawRectangle(x, y, width, height); "
+  }
+  codedraw
+}
+
+fn codedraw_draw_square(codedraw: CodeDraw, x: Int, y: Int, side_size: Int): CodeDraw => {
+  java {
+    "codedraw.drawSquare(x, y, side_size); "
+  }
+  codedraw
+}
+
+fn codedraw_draw_circle(codedraw: CodeDraw, x: Double, y: Double, radius: Double): CodeDraw => {
+  java {
+    "codedraw.drawCircle(x, y, radius); "
+  }
+  codedraw
+}
+
+fn codedraw_draw_line(codedraw: CodeDraw, start_x: Int, start_y: Int, end_x: Int, end_y: Int): CodeDraw => {
+  java {
+    "codedraw.drawLine(start_x, start_y, end_x, end_y);"
+  }
+  codedraw
+}
+
+fn codedraw_show(codedraw: CodeDraw): CodeDraw => {
+  java {
+    "codedraw.show();"
+  }
+  codedraw
+}
+

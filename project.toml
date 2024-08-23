@@ -1,0 +1,12 @@
+
+[project]
+name = "codedraw"
+version = "0.1.0"
+authors = ["You"]
+edition = "2024"
+
+[libs]
+CodeDraw = "https://github.com/Krassnig/CodeDraw/releases/download/4.0.3/CodeDraw.jar"
+
+[depends]
+
