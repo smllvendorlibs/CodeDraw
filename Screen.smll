@@ -1,0 +1,40 @@
+
+type Screen = "codedraw.Screen"
+
+fn get_all_screens(): List[Screen] => {
+  val screens = null of Screen
+  java {
+    "GraphicsDevice[] gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();"
+    "screens = new codedraw.Screen[gd.length];"
+  	"	for (int i = 0; i < screens.length; i++) {"
+		"	screens[i] = new Screen(gd[i]);"
+		"} "
+  }
+  screens
+}
+
+fn get_defaul_screen(): Screen => {
+  val screen = null of Screen
+  java {
+    "screen = codedraw.Screen.getDefaultScreen();"
+  }
+  screen
+}
+
+fn screen_name(screen: Screen): String => {
+  val name = null of String
+  java {
+    "name = screen.getName();"
+  }
+  name
+}
+
+fn screen_is_default(screen: Screen): Bool => {
+  val is_default = false
+  java {
+    "is_default = default.isDefaultScreen();"
+  }
+  is_default
+}
+
+

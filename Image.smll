@@ -1,0 +1,132 @@
+
+type Image = "codedraw.Image"
+
+fn image_new(width: Int, height: Int): Image => {
+  val img = null of Image
+  java {
+    "img = new codedraw.Image(width, height);"
+  }
+  img
+}
+
+
+fn image_clear(img: Image): Image => {
+  java {
+    "img.clear();"
+  }
+  img
+}
+
+fn image_width(img: Image): Int => {
+  val width = 0
+  java {
+    "width = img.getWidth();"
+  }
+  width
+}
+
+fn image_height(img: Image): Int => {
+  val height = 0
+  java {
+    "height = img.getHeight();"
+  }
+  height
+}
+
+fn image_corner_radius(img: Image): Int => {
+  val radius = 0
+  java {
+    "radius = img.getCornerRadius();"
+  }
+  radius
+}
+
+(* ================= Draw Function ================= *)
+fn image_draw_rectangle(image: Image, x: Int, y: Int, width: Int, height: Int): Image => {
+  java {
+    "image.drawRectangle(x, y, width, height); "
+  }
+  image
+}
+
+fn image_draw_square(image: Image, x: Int, y: Int, side_size: Int): Image => {
+  java {
+    "image.drawSquare(x, y, side_size); "
+  }
+  image
+}
+
+fn image_draw_circle(image: Image, x: Double, y: Double, radius: Double): Image => {
+  java {
+    "image.drawCircle(x, y, radius); "
+  }
+  image
+}
+
+fn image_draw_line(image: Image, start_x: Int, start_y: Int, end_x: Int, end_y: Int): Image => {
+  java {
+    "image.drawLine(start_x, start_y, end_x, end_y);"
+  }
+  image
+}
+
+fn image_draw_triangle(image: Image, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): Image => {
+  java {
+    "image.drawTriangle(x1, y1, x2, y2, x3, y3);"
+  }
+  image
+}
+
+fn image_draw_text(image: Image, x: Int, y: Int, text: String): Image => {
+  java {
+    "image.drawText(x, y, text);"
+  }
+  image
+}
+
+(* Cast the List[Double] to List[double] using Java *)
+fn image_draw_plogon(image: Image, vertices: List[Double]): Image => {
+  java {
+    "// image.drawPolygon(vertices);"
+  }
+  image
+}
+
+(* ============ Fill Functions ====================== *)
+
+fn image_fill_rectangle(image: Image, x: Int, y: Int, width: Int, height: Int): Image => {
+  java {
+    "image.fillRectangle(x, y, width, height); "
+  }
+  image
+}
+
+fn image_fill_square(image: Image, x: Int, y: Int, side_size: Int): Image => {
+  java {
+    "image.fillSquare(x, y, side_size); "
+  }
+  image
+}
+
+fn image_fill_circle(image: Image, x: Double, y: Double, radius: Double): Image => {
+  java {
+    "image.fillCircle(x, y, radius); "
+  }
+  image
+}
+
+fn image_fill_line(image: Image, start_x: Int, start_y: Int, end_x: Int, end_y: Int): Image => {
+  java {
+    "image.fillLine(start_x, start_y, end_x, end_y);"
+  }
+  image
+}
+
+fn image_fill_triangle(image: Image, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): Image => {
+  java {
+    "image.fillTriangle(x1, y1, x2, y2, x3, y3);"
+  }
+  image
+}
+
+

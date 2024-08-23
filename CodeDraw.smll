@@ -9,6 +9,7 @@ fn codedraw_new(width: Int, height: Int): CodeDraw => {
   codedraw
 }
 
+(* ============ Drawing Functions ==================== *)
 fn codedraw_draw_rectangle(codedraw: CodeDraw, x: Int, y: Int, width: Int, height: Int): CodeDraw => {
   java {
     "codedraw.drawRectangle(x, y, width, height); "
@@ -37,6 +38,66 @@ fn codedraw_draw_line(codedraw: CodeDraw, start_x: Int, start_y: Int, end_x: Int
   codedraw
 }
 
+fn codedraw_draw_triangle(codedraw: CodeDraw, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): CodeDraw => {
+  java {
+    "codedraw.drawTriangle(x1, y1, x2, y2, x3, y3);"
+  }
+  codedraw
+}
+
+fn codedraw_draw_text(codedraw: CodeDraw, x: Int, y: Int, text: String): CodeDraw => {
+  java {
+    "codedraw.drawText(x, y, text);"
+  }
+  codedraw
+}
+
+(* Cast the List[Double] to List[double] using Java *)
+fn codedraw_draw_plogon(codedraw: CodeDraw, vertices: List[Double]): CodeDraw => {
+  java {
+    "// codedraw.drawPolygon(vertices);"
+  }
+  codedraw
+}
+
+(* ============ Fill Functions ====================== *)
+
+fn codedraw_fill_rectangle(codedraw: CodeDraw, x: Int, y: Int, width: Int, height: Int): CodeDraw => {
+  java {
+    "codedraw.fillRectangle(x, y, width, height); "
+  }
+  codedraw
+}
+
+fn codedraw_fill_square(codedraw: CodeDraw, x: Int, y: Int, side_size: Int): CodeDraw => {
+  java {
+    "codedraw.fillSquare(x, y, side_size); "
+  }
+  codedraw
+}
+
+fn codedraw_fill_circle(codedraw: CodeDraw, x: Double, y: Double, radius: Double): CodeDraw => {
+  java {
+    "codedraw.fillCircle(x, y, radius); "
+  }
+  codedraw
+}
+
+fn codedraw_fill_line(codedraw: CodeDraw, start_x: Int, start_y: Int, end_x: Int, end_y: Int): CodeDraw => {
+  java {
+    "codedraw.fillLine(start_x, start_y, end_x, end_y);"
+  }
+  codedraw
+}
+
+fn codedraw_fill_triangle(codedraw: CodeDraw, x: Double, y: Double, x2: Double, x2: Double, x3: Double, y3: Double): CodeDraw => {
+  java {
+    "codedraw.fillTriangle(x1, y1, x2, y2, x3, y3);"
+  }
+  codedraw
+}
+
+(* =========== Misc ======================= *)
 fn codedraw_show(codedraw: CodeDraw): CodeDraw => {
   java {
     "codedraw.show();"
