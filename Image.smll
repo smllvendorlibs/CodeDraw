@@ -33,8 +33,8 @@ fn image_height(img: Image): Int => {
   height
 }
 
-fn image_corner_radius(img: Image): Int => {
-  val radius = 0
+fn image_corner_radius(img: Image): Double => {
+  val radius = 0 as Double
   java {
     "radius = img.getCornerRadius();"
   }
