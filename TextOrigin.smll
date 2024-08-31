@@ -1,0 +1,28 @@
+
+import System::Core
+
+enum TextOrigin = 
+  TopLeft 
+  | TopMiddle 
+  | TopRight 
+  | CenterLeft 
+  | Center 
+  | CenterRight 
+  | BottomLeft 
+  | BottomMiddle
+  | BottomRight 
+
+
+fn textorigin_string(txt: TextOrigin): String  => 
+  match txt {
+    TextOrigin.TopLeft -> "TOPLEFT"
+    TextOrigin.TopMiddle -> "TOPMIDDLE"
+    TextOrigin.TopRight -> "TOPRIGHT"
+    TextOrigin.CenterLeft -> "CENTERLEFT"
+    TextOrigin.Center-> "CENTER"
+    TextOrigin.CenterRight -> "CENTERRIGHT"
+    TextOrigin.BottomLeft -> "BOTTOMLEFT"
+    TextOrigin.BottomMiddle -> "BOTTOMMIDDLE"
+    TextOrigin.BottomRight -> "BOTTOMRIGHT"
+    _ -> unreachable() as String
+  }

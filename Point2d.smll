@@ -1,0 +1,14 @@
+
+type CodeDrawPoint = "codedraw.Point2D"
+struct Point2D(x: Double, y: Double)
+
+fn new_point(x: Double, y: Double): Point2D => Point2D { x: x, y: y }
+
+fn point_into(p: Point2D): CodeDrawPoint => {
+  val n = null of CodeDrawPoint
+  java {
+    "n = new codedraw.Point2D(p.x(), p.y());"
+  }
+  n
+}
+

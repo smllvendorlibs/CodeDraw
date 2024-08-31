@@ -1,0 +1,14 @@
+
+import System::Core
+
+enum Corner = Sharp | Round | Bevel
+
+fn corner_string(c: Corner): String => 
+  match c {
+    Corner.Sharp -> "SHARP"
+    Corner.Round -> "ROUND"
+    Corner.Bevel -> "BEVEL"
+    _ -> unreachable() as String
+  }
+
+
